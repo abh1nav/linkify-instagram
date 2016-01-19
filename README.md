@@ -9,8 +9,9 @@ linkify-instagram (WIP)
 ```javascript
 var linkify = require('linkify-instagram');
 
-var text = 'Hello #World';
-var linkified = linkify(text);
+console.log(linkify('Hello #World'));
+// --> Hello <a href="https://www.instagram.com/explore/tags/world">#World</a>
 
-console.log(linkified);
+console.log(linkify('Hello #World', '<a href="https://www.instagram.com/explore/tags/{hashtag}" target="_blank">#{hashtag}</a>'));
+// --> Hello <a href="https://www.instagram.com/explore/tags/world" target="_blank">#World</a>
 ```
