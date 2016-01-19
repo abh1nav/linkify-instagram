@@ -1,11 +1,11 @@
 {
   "name": "linkify-instagram",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Linkify Instagram captions or comments",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-    "test-watch": "mocha --reporter spec --watch"
+    "test": "mocha --reporter spec ./src/test/*",
+    "test-watch": "mocha --reporter spec --watch ./src/test/*"
   },
   "repository": {
     "type": "git",
