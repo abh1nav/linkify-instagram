@@ -1,9 +1,13 @@
 var _ = require('lodash');
 
 var hashtag = require('./hashtag');
+var htmlEscape = require('./htmlEscape');
 var username = require('./username');
 
 module.exports = function(text, htTemplate, unTemplate) {
+	// Escape HTML characters
+	text = htmlEscape(text);
+
 	// Hashtags
 	var hashtags = text.match(/[#]\w+/g);
 	if (hashtags) {

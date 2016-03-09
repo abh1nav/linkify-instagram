@@ -69,5 +69,11 @@ describe('linkify', function() {
 		var caption = 'Hello @world@sup @javascript';
 		linkify(caption).should.equal(expected);
 	});
+
+	it('should linkify captions with >, < and pipes correctly', function() {
+		var expected = 'Hello <a href="https://www.instagram.com/world">@world</a> here are some &gt; &amp; &lt; signs that you can escape';
+		var caption = 'Hello @world here are some > & < signs that you can escape';
+		linkify(caption).should.equal(expected);
+	});
 	
 });
