@@ -1,4 +1,4 @@
-linkify-instagram (WIP)
+linkify-instagram
 ===
 
 [![npm version](https://badge.fury.io/js/linkify-instagram.svg)](https://www.npmjs.com/package/linkify-instagram)
