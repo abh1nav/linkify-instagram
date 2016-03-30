@@ -1,6 +1,6 @@
 {
   "name": "linkify-instagram",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Linkify Instagram captions or comments",
   "main": "index.js",
   "scripts": {
@@ -26,9 +26,5 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.4"
-  },
-  "dependencies": {
-    "lodash": "^4.6.1",
-    "string-format": "^0.5.0"
   }
 }

@@ -1,23 +1,19 @@
-var _ = require('lodash');
-var format = require('string-format');
-format.extend(String.prototype);
-
 var defaultTmpl = '<a href="https://www.instagram.com/explore/tags/{hashtag}">#{hashtag}</a>';
 
 module.exports = function(hashtag, template) {
-	if (!_.isString(hashtag)) {
+	if (typeof hashtag !== 'string') {
 		throw new Error('hashtag must be a string');
 		return;
 	}
-	if (!_.isNil(template) && !_.isString(template)) {
+	if (template && typeof template !== 'string') {
 		throw new Error('template must be a string');
 		return;
 	}
 
-	var tag = _.replace(hashtag, '#', ''),
-		tmpl;
+	var tag = hashtag.replace(/#/ig, '');
+	var tmpl;
 
-	if (_.isNil(template)) {
+	if (!template) {
 		tmpl = defaultTmpl;
 	} else {
 		tmpl = template;
@@ -28,5 +24,5 @@ module.exports = function(hashtag, template) {
 		return;
 	}
 
-	return tmpl.format({hashtag: tag});
+	return tmpl.replace(/{hashtag}/g, tag);
 };
