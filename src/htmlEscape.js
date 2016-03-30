@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 var esc = [
   {
     key: '&',
@@ -16,7 +14,7 @@ var esc = [
 ];
 
 module.exports = function(text) {
-	_.each(esc, function(escapeSequence) {
+	esc.forEach(function(escapeSequence) {
     text = text.replace(escapeSequence.key, escapeSequence.val);
   });
   return text;
