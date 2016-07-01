@@ -159,4 +159,16 @@ describe('linkify', function() {
 		var caption = 'keyboard @.cat.';
 		linkify(caption).should.equal(expected);
 	});
+
+	it('should linkify a hashtag, but stop at a period character', function() {
+		var expected = '<a href="https://www.instagram.com/explore/tags/keyboard">#keyboard</a>.cat';
+		var caption = '#keyboard.cat';
+		linkify(caption).should.equal(expected);
+	});
+
+	it('should linkify a hashtag containing an underscore', function() {
+		var expected = '<a href="https://www.instagram.com/explore/tags/keyboard_cat">#keyboard_cat</a>';
+		var caption = '#keyboard_cat';
+		linkify(caption).should.equal(expected);
+	});
 });
