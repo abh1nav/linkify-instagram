@@ -1,6 +1,6 @@
 {
   "name": "linkify-instagram",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Linkify Instagram captions or comments",
   "main": "index.js",
   "scripts": {
